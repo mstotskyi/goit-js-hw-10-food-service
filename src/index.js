@@ -1,13 +1,14 @@
+import menuCardTpl from './templates/template.hbs';
+import menuArr from './menu.json'
 import './sass/main.scss';
 
-
+const themeSwitcher = document.querySelector('#theme-switch-toggle');
+const menu = document.querySelector('.js-menu');
 
 const Theme = {
     LIGHT: 'light-theme',
     DARK: 'dark-theme',
   };
-
-const themeSwitcher = document.querySelector('#theme-switch-toggle');
 
 checkTheme ()
 
@@ -41,4 +42,11 @@ function theme (evt) {
         document.body.classList.replace(Theme.DARK, Theme.LIGHT)
         localStorage.setItem('bodyTheme', Theme.LIGHT)
     }
+}
+
+const menuCard = createMenuCard(menuArr);
+menu.insertAdjacentHTML('beforeend', menuCard);
+
+function createMenuCard (menuArr) {
+return menuCardTpl (menuArr);
 }
