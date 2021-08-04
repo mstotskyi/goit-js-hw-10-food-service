@@ -19,8 +19,9 @@ function checkTheme () {
     let savedTheme = localStorage.getItem('bodyTheme')
  if (savedTheme){
     document.body.classList.add(savedTheme);
-    if(savedTheme === Theme.DARK)
-    {themeSwitcher.checked = true};
+    if(savedTheme === Theme.DARK) 
+    {themeSwitcher.checked = true};//Свойство checked false по умолчанию. Нет необходимости 
+    // явно его прописывать. Указывается только если меняется на true.
     }
 else {
     document.body.classList.add(Theme.LIGHT);
