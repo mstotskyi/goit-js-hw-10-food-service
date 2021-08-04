@@ -17,14 +17,13 @@ themeSwitcher.addEventListener("change", theme);
 function checkTheme () {
 
     let savedTheme = localStorage.getItem('bodyTheme')
- if ( savedTheme !== null){
+ if (savedTheme){
     document.body.classList.add(savedTheme);
     if(savedTheme === Theme.DARK)
     {themeSwitcher.checked = true};
     }
 else {
     document.body.classList.add(Theme.LIGHT);
-    themeSwitcher.checked = false;
     }
 }
 
